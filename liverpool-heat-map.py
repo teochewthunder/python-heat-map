@@ -2,9 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt 
 
 def heatMap(seasons, players, vals, stat):
-    plt.figure(figsize = (10, 5))
+    plt.figure(figsize = (10, 10))
 
-    plt.imshow(np.array(vals))
+    plt.imshow(vals, cmap="Reds")
+    plt.xticks(np.arange(0, len(players)), players, rotation=90)
+    plt.yticks(np.arange(0, len(seasons)), seasons)
 
     plt.colorbar() 
 
