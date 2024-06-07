@@ -9,6 +9,12 @@ def heatMap(seasons, players, vals, stat):
     plt.yticks(np.arange(0, len(seasons)), seasons)
 
     plt.colorbar() 
+    
+    for colindex, lst in enumerate(vals):
+        for rowindex, val in enumerate(lst):
+            rgb = 0
+            if (val > np.nanmean(vals)): rgb = 1
+            plt.text(rowindex, colindex, val, color=(rgb, rgb, rgb))
 
     plt.title("Liverpool FC Player " + stat)
     plt.show()
