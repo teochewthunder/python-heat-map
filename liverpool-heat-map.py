@@ -107,7 +107,4 @@ while (ans != 0):
                 
         stats.append(arr)
     
-    print(players)
-    print(seasons)
-    print(stats)
     heatMap(seasons, players, stats, stat)
