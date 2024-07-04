@@ -10,10 +10,11 @@ def heatMap(seasons, players, vals, stat):
 
     plt.colorbar() 
     
+    vals_avg = np.nanmean(vals)
     for colindex, lst in enumerate(vals):
         for rowindex, val in enumerate(lst):
             rgb = 0
-            if (val > np.nanmean(vals)): rgb = 1
+            if (val > vals_avg): rgb = 1
             plt.text(rowindex, colindex, val, color=(rgb, rgb, rgb))
 
     plt.title("Liverpool FC Player " + stat)
